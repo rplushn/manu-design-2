@@ -17,11 +17,11 @@ export function FeatureInventory() {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+              <div className="bg-white/5 border border-white/10 p-6 backdrop-blur-sm">
                 <div className="text-3xl font-bold text-white mb-1">100%</div>
                 <div className="text-sm text-neutral-400">Automatizado</div>
               </div>
-              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+              <div className="bg-white/5 border border-white/10 p-6 backdrop-blur-sm">
                 <div className="text-3xl font-bold text-white mb-1">0</div>
                 <div className="text-sm text-neutral-400">Errores manuales</div>
               </div>
@@ -32,19 +32,17 @@ export function FeatureInventory() {
             </button>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[340px]">
-            {/* Phone Mockup Tilted */}
-            <div className="relative rounded-[3rem] border-[8px] border-[#222] bg-[#222] overflow-hidden shadow-2xl -rotate-3 hover:rotate-0 transition-all duration-700 ease-out z-10">
-              <img
-                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-4.svg"
-                alt="Inventory Dashboard"
-                className="w-full h-auto object-cover opacity-90"
-              />
-            </div>
-            
-            {/* Background decorative blurry blobs */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-500/20 rounded-full blur-[100px]" />
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-purple-500/10 rounded-full blur-[80px]" />
+          <div className="relative mx-auto w-[12.5rem] sm:w-[18.75rem]">
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero108/iphone.png"
+              alt="iPhone frame"
+              className="relative z-20 block w-full"
+            />
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-4.svg"
+              alt="Inventory Dashboard"
+              className="absolute top-0 block w-full rounded-[50px]"
+            />
           </div>
         </div>
       </div>

@@ -6,16 +6,17 @@ export function FeatureOCR() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
-            <div className="relative mx-auto w-full max-w-[320px] lg:max-w-[360px]">
-              <div className="relative rounded-[3rem] border-[8px] border-neutral-900 bg-neutral-900 overflow-hidden shadow-2xl rotate-6 hover:rotate-0 transition-all duration-700 ease-out">
-                <img
-                  src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg"
-                  alt="OCR Scanning interface"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-neutral-100 to-neutral-50 rounded-full blur-3xl opacity-50" />
+            <div className="relative mx-auto w-[12.5rem] sm:w-[18.75rem]">
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero108/iphone.png"
+                alt="iPhone frame"
+                className="relative z-20 block w-full"
+              />
+              <img
+                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg"
+                alt="OCR Scanning interface"
+                className="absolute top-0 block w-full rounded-[50px]"
+              />
             </div>
           </div>
           
@@ -38,7 +39,7 @@ export function FeatureOCR() {
                 "Detección automática de duplicados"
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-neutral-700">
-                  <div className="w-6 h-6 rounded-full bg-black flex items-center justify-center shrink-0">
+                  <div className="w-6 h-6 bg-black flex items-center justify-center shrink-0">
                     <Check className="w-3 h-3 text-white" strokeWidth={3} />
                   </div>
                   {item}
