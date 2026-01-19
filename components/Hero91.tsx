@@ -35,19 +35,18 @@ const Hero91 = ({ className }: Hero91Props) => {
       <div className="w-full shrink-0 hidden lg:block lg:w-[45%]">
         <div className="relative mx-auto h-[27.5rem] w-full max-w-[36.5rem] overflow-hidden rounded-3xl bg-neutral-50 bg-cover bg-center bg-no-repeat sm:h-[39.5rem]">
           <div className="relative mx-auto mt-20 w-[12.5rem] sm:w-[18.75rem]">
+            {/* App Screen Image - BEHIND */}
+            <img
+              src="/Manu-Dashboard-foto.png"
+              alt="MANU App Dashboard"
+              className="absolute top-0 left-0 w-full h-full object-cover object-top rounded-[50px] z-0"
+            />
+            {/* iPhone Frame - IN FRONT */}
             <img
               src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero108/iphone.png"
               alt="iPhone mockup"
-              className="relative z-20 block w-full pointer-events-none"
+              className="relative z-10 block w-full pointer-events-none"
             />
-            {/* App Screen Image */}
-            <div className="absolute top-[2.5%] left-[6%] w-[88%] h-[95%] rounded-[30px] overflow-hidden z-10 bg-white">
-                <img
-                  src="/Manu-Dashboard-foto.png"
-                  alt="MANU App Dashboard"
-                  className="w-full h-full object-cover object-top"
-                />
-            </div>
           </div>
         </div>
       </div>
