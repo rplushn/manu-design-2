@@ -38,13 +38,16 @@ const Hero91 = ({ className }: Hero91Props) => {
             <img
               src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero108/iphone.png"
               alt="iPhone mockup"
-              className="absolute top-0 z-20 block w-full"
+              className="relative z-20 block w-full pointer-events-none"
             />
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-7-tall.svg"
-              alt="App screenshot"
-              className="absolute top-0 block w-full rounded-[50px]"
-            />
+            {/* App Screen Image */}
+            <div className="absolute top-[2.5%] left-[6%] w-[88%] h-[95%] rounded-[30px] overflow-hidden z-10 bg-white">
+                <img
+                  src="/Manu-Dashboard-foto.png"
+                  alt="MANU App Dashboard"
+                  className="w-full h-full object-cover object-top"
+                />
+            </div>
           </div>
         </div>
       </div>
