@@ -32,17 +32,18 @@ const Hero91 = ({ className }: Hero91Props) => {
           </Button>
         </div>
       </div>
-      <div className="relative hidden h-[720px] w-[45%] overflow-hidden rounded-l-full bg-neutral-100 lg:block">
+      <div className="relative hidden h-[720px] w-[45%] overflow-hidden rounded-l-full bg-black lg:block">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="h-full w-full rounded-tl-xl object-cover grayscale opacity-90"
+          data-wf-ignore="true"
+          data-object-fit="cover"
+          className="h-full w-full rounded-tl-xl object-cover"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-person-scanning-a-qr-code-with-a-smartphone-4389-large.mp4" type="video/mp4" />
+          <source src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/video-1.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/5" />
       </div>
     </section>
   );
