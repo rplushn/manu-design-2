@@ -17,7 +17,7 @@ const Hero91 = ({ className }: Hero91Props) => {
         <p className="font-light text-foreground uppercase tracking-widest text-sm">
           FACTURACIÓN + INVENTARIO EN TIEMPO REAL
         </p>
-        <h1 className="text-5xl font-medium text-foreground md:text-6xl lg:text-7xl leading-tight">
+        <h1 className="text-5xl font-semibold text-foreground md:text-6xl lg:text-7xl leading-[1.1]">
           Una simple foto a tus facturas es todo lo que necesitas.
         </h1>
         <p className="my-8 text-foreground/80 md:text-xl font-light leading-relaxed">
