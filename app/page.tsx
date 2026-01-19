@@ -1,4 +1,4 @@
-import { Hero } from '@/components/Hero'
+import { Hero91 } from '@/components/Hero91'
 import { Features } from '@/components/Features'
 import { ProductShowcase } from '@/components/ProductShowcase'
 import { Statistics } from '@/components/Statistics'
@@ -14,7 +14,7 @@ import { CTA } from '@/components/CTA'
 export default function HomePage() {
   return (
     <main className="bg-white">
-      <Hero />
+      <Hero91 />
       <Features />
       <ProductShowcase />
       <Statistics />
