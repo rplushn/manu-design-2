@@ -19,7 +19,7 @@ export function Features() {
   ]
 
   return (
-    <section className="border-b border-black/10">
+    <section id="funcionalidades" className="border-b border-black/10">
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="mb-16">
           <h2 className="text-3xl font-light text-black mb-4">Tu negocio y tu vida, en orden.</h2>

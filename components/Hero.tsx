@@ -1,7 +1,7 @@
 export function Hero() {
   return (
-    <section className="border-b border-black/10">
-      <div className="max-w-6xl mx-auto px-6 py-24">
+    <section id="inicio" className="border-b border-black/10">
+      <div className="max-w-6xl mx-auto px-6 py-32">
         <div className="max-w-3xl">
           <h1 className="text-5xl font-light text-black tracking-tight mb-6">
             Una simple foto a tus facturas es todo lo que necesitas.
