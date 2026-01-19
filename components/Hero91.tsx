@@ -32,18 +32,21 @@ const Hero91 = ({ className }: Hero91Props) => {
           </Button>
         </div>
       </div>
-      <div className="relative hidden h-[720px] w-[45%] overflow-hidden rounded-l-full bg-black lg:block">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          data-wf-ignore="true"
-          data-object-fit="cover"
-          className="h-full w-full rounded-tl-xl object-cover"
-        >
-          <source src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/video-1.mp4" type="video/mp4" />
-        </video>
+      <div className="w-full shrink-0 hidden lg:block lg:w-[45%]">
+        <div className="relative mx-auto h-[27.5rem] w-full max-w-[36.5rem] overflow-hidden rounded-3xl bg-neutral-50 bg-cover bg-center bg-no-repeat sm:h-[39.5rem]">
+          <div className="relative mx-auto mt-20 w-[12.5rem] sm:w-[18.75rem]">
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero108/iphone.png"
+              alt="iPhone mockup"
+              className="absolute top-0 z-20 block w-full"
+            />
+            <img
+              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-7-tall.svg"
+              alt="App screenshot"
+              className="absolute top-0 block w-full rounded-[50px]"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
