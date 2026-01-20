@@ -7,6 +7,7 @@ import { Testimonials } from '@/components/Testimonials'
 import { Pricing } from '@/components/Pricing'
 import { FAQ } from '@/components/FAQ'
 import { CTA } from '@/components/CTA'
+import { Footer15 } from '@/components/Footer15' // ← Importamos el footer
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Pricing />
       <FAQ />
       <CTA />
+      <Footer15 /> {/* ← Lo renderizamos aquí */}
     </main>
   )
 }

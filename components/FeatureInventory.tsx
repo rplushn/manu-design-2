@@ -38,11 +38,26 @@ export function FeatureInventory() {
               alt="iPhone frame"
               className="relative z-20 block w-full"
             />
-            <img
-              src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-4.svg"
-              alt="Inventory Dashboard"
-              className="absolute top-0 block w-full rounded-[50px]"
-            />
+            {/* Pantalla del iPhone con imagen */}
+            <div
+              className="
+                absolute
+                top-[2.5%]
+                left-[4.5%]
+                right-[5%]
+                bottom-[6%]
+                z-10
+                rounded-[2.4rem]
+                overflow-hidden
+                bg-black
+              "
+            >
+              <img
+                src="/inventario.png"
+                alt="Pantalla Inventario MANU"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -25,11 +25,12 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-black flex items-center justify-center transition-transform group-hover:scale-105">
-              <span className="text-white text-sm font-light">M</span>
-            </div>
-            <span className="text-lg font-light text-black tracking-tight">MANU</span>
+          <Link href="/" className="flex items-center group transition-transform group-hover:scale-105">
+            <img
+              src="/LOGO-MANU-negro.svg"
+              alt="MANU Logo"
+              className="h-10"
+            />
           </Link>
 
           {/* Navigation */}

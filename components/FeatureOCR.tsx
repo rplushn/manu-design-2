@@ -5,6 +5,8 @@ export function FeatureOCR() {
     <section className="bg-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Mockup celular */}
           <div className="order-2 lg:order-1">
             <div className="relative mx-auto w-[12.5rem] sm:w-[18.75rem]">
               <img
@@ -12,14 +14,34 @@ export function FeatureOCR() {
                 alt="iPhone frame"
                 className="relative z-20 block w-full"
               />
-              <img
-                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-dark-1.svg"
-                alt="OCR Scanning interface"
-                className="absolute top-0 block w-full rounded-[50px]"
-              />
+
+              {/* Pantalla del iPhone con video */}
+              <div
+                className="
+                  absolute
+                  top-[1.5%]
+                  left-[5%]
+                  right-[5%]
+                  bottom-[4%]
+                  z-10
+                  rounded-[2.4rem]
+                  overflow-hidden
+                  bg-black
+                "
+              >
+                <video
+                  src="/Historial-video.MP4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
-          
+
+          {/* Texto */}
           <div className="order-1 lg:order-2">
             <span className="text-sm font-semibold tracking-widest text-neutral-500 uppercase mb-4 block">
               CONTROL DE GASTOS
@@ -30,13 +52,13 @@ export function FeatureOCR() {
             <p className="text-lg text-neutral-600 mb-8 leading-relaxed">
               El motor OCR de MANU lee cada detalle de tus facturas físicas. Olvídate de digitar manualmente.
             </p>
-            
+
             <ul className="space-y-4">
               {[
                 "Reconocimiento inteligente de texto",
                 "Búsqueda por proveedor, fecha o monto",
                 "Historial seguro por meses",
-                "Detección automática de duplicados"
+                "Detección automática de duplicados",
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-neutral-700">
                   <div className="w-6 h-6 bg-black flex items-center justify-center shrink-0">
