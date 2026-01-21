@@ -36,25 +36,25 @@ export function Header() {
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <Link 
-              href="#inicio" 
+              href="/" 
               className="text-sm font-light text-black/70 hover:text-black transition-colors"
             >
               Inicio
             </Link>
             <Link 
-              href="#funcionalidades" 
+              href="/funcionalidades" 
               className="text-sm font-light text-black/70 hover:text-black transition-colors"
             >
               Funcionalidades
             </Link>
             <Link 
-              href="#quienes-somos" 
+              href="/quienes-somos" 
               className="text-sm font-light text-black/70 hover:text-black transition-colors"
             >
               Quiénes Somos
             </Link>
             <Link 
-              href="#contacto" 
+              href="/contacto" 
               className="text-sm font-light text-black/70 hover:text-black transition-colors"
             >
               Contacto
