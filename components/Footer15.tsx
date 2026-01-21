@@ -1,5 +1,6 @@
 "use client";
 import { Instagram, MessageCircle, Phone } from "lucide-react";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
@@ -37,8 +38,8 @@ const NAVIGATION = [
   {
     title: "Legal",
     links: [
-      { name: "Términos", href: "#" },
-      { name: "Privacidad", href: "#" },
+      { name: "Términos", href: "/terms" },
+      { name: "Privacidad", href: "/privacy-policy" },
     ],
   },
 ];
@@ -58,7 +59,7 @@ const Footer15 = ({ className }: Footer15Props) => {
               <img
                 src="/LOGO-MANU-negro.svg"
                 alt="MANU Logo"
-                className="h-8 invert"
+                className="h-12 invert"
               />
             </a>
             <p className="w-full max-w-54 text-base leading-normal text-gray-300 md:text-lg">
@@ -101,15 +102,21 @@ const Footer15 = ({ className }: Footer15Props) => {
                   <p className="mb-2 text-sm font-semibold text-white md:text-base">
                     {section.title}
                   </p>
-                  {section.links.map((link, _) => (
-                    <a
-                      key={link.name}
-                      href={link.href}
-                      className="text-sm leading-none font-medium text-gray-400 opacity-50 transition-opacity hover:opacity-100 hover:text-white"
-                    >
-                      {link.name}
-                    </a>
-                  ))}
+                  {section.links.map((link, _) => {
+                    const LinkComponent = section.title === "Legal" ? Link : "a";
+                    const linkProps = section.title === "Legal" 
+                      ? { href: link.href }
+                      : { href: link.href };
+                    return (
+                      <LinkComponent
+                        key={link.name}
+                        {...linkProps}
+                        className="text-sm leading-none font-medium text-gray-400 opacity-50 transition-opacity hover:opacity-100 hover:text-white"
+                      >
+                        {link.name}
+                      </LinkComponent>
+                    );
+                  })}
                   {section.title === "Soporte" && (
                     <div className="mt-2 flex items-center gap-2 text-sm font-medium text-gray-400">
                       <Phone className="size-4" />

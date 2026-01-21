@@ -8,6 +8,7 @@ interface Hero91Props {
 const Hero91 = ({ className }: Hero91Props) => {
   return (
     <section
+      id="inicio"
       className={cn(
         "flex min-h-screen items-center justify-between bg-background py-14",
         className,

@@ -2,7 +2,7 @@ import { Check } from "lucide-react"
 
 export function FeatureOCR() {
   return (
-    <section className="bg-white py-24 overflow-hidden">
+    <section id="funcionalidades" className="bg-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
