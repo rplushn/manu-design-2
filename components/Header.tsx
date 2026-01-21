@@ -59,6 +59,12 @@ export function Header() {
             >
               Contacto
             </Link>
+            <Link 
+              href="/ayuda" 
+              className="text-sm font-light text-black/70 hover:text-black transition-colors"
+            >
+              Ayuda
+            </Link>
           </nav>
 
           {/* Login Button */}
