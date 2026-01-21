@@ -72,7 +72,7 @@ export function Header() {
             href="/portal" 
             className="px-6 py-2 text-sm font-light text-black border border-black/10 hover:border-black/30 hover:bg-black/5 transition-all"
           >
-            Log in
+            Portal Web (Feb 2026)
           </Link>
         </div>
       </div>
