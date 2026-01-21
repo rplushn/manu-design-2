@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion"
+
 export function Pricing() {
   const plans = [
     {
@@ -38,18 +42,35 @@ export function Pricing() {
   ]
 
   return (
-    <section className="border-b border-black/10 bg-neutral-50">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5 }}
+      className="border-b border-black/10 bg-neutral-50"
+    >
       <div className="max-w-6xl mx-auto px-6 py-20">
-        <div className="mb-16 text-center">
-          <h2 className="text-3xl font-light text-black mb-4">Facturación Profesional</h2>
-          <p className="text-base font-light text-neutral-600">Empieza gratis. Actualiza cuando crezcas.</p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-16 text-center"
+        >
+          <h2 className="text-4xl md:text-5xl font-semibold text-neutral-900 mb-6 leading-tight">Facturación Profesional</h2>
+          <p className="text-lg text-neutral-600 leading-relaxed">Empieza gratis. Actualiza cuando crezcas.</p>
+        </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <div 
-              key={index} 
-              className={`border border-black/10 bg-white p-8 ${
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className={`border border-black/10 bg-white p-8 transition-shadow duration-200 hover:shadow-lg hover:bg-neutral-50 ${
                 plan.featured ? 'ring-2 ring-black' : ''
               }`}
             >
@@ -70,7 +91,9 @@ export function Pricing() {
                 ))}
               </ul>
               
-              <button 
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 className={`w-full py-3 text-sm font-light border-0 transition-colors ${
                   plan.featured 
                     ? 'bg-black text-white hover:bg-black/90' 
@@ -78,11 +101,11 @@ export function Pricing() {
                 }`}
               >
                 {plan.price === 'Contactar' ? 'Hablar con ventas' : 'Comenzar'}
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

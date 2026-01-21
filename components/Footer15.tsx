@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion"
 import { Instagram, MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
 
@@ -50,7 +51,13 @@ interface Footer15Props {
 
 const Footer15 = ({ className }: Footer15Props) => {
   return (
-    <section className={cn("py-32 bg-black", className)}>
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+      className={cn("py-32 bg-black", className)}
+    >
       <footer className="container mx-auto max-w-7xl px-6 flex flex-col gap-32">
         <div className="flex w-full flex-col justify-between gap-y-24 lg:flex-row">
           <div className="flex shrink-0 grow-0 basis-auto flex-col items-start justify-start gap-6">
@@ -139,7 +146,7 @@ const Footer15 = ({ className }: Footer15Props) => {
           </div>
         </div>
       </footer>
-    </section>
+    </motion.section>
   );
 };
 

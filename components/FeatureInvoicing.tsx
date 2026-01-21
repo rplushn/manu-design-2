@@ -1,7 +1,23 @@
+"use client"
+
+import { motion } from "framer-motion"
+
 export function FeatureInvoicing() {
   return (
-    <section className="bg-neutral-50 py-24">
-      <div className="max-w-6xl mx-auto px-6 text-center mb-16">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5 }}
+      className="bg-neutral-50 py-24"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="max-w-6xl mx-auto px-6 text-center mb-16"
+      >
         <span className="text-sm font-semibold tracking-widest text-neutral-500 uppercase mb-4 block">
           FACTURACIÓN PROFESIONAL
         </span>
@@ -11,7 +27,7 @@ export function FeatureInvoicing() {
         <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
           Cumple con todos los requisitos del SAR. Personaliza con tu logo, genera el correlativo CAI y envía por el canal que prefieras.
         </p>
-      </div>
+      </motion.div>
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-center items-end gap-8 md:gap-4">
@@ -69,6 +85,6 @@ export function FeatureInvoicing() {
 
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

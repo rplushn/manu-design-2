@@ -1,4 +1,12 @@
+"use client"
+
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ChevronDown } from "lucide-react"
+
 export function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
   const faqs = [
     {
       question: '¿Necesito experiencia contable?',
@@ -23,21 +31,65 @@ export function FAQ() {
   ]
 
   return (
-    <section className="border-b border-black/10">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.5 }}
+      className="border-b border-black/10"
+    >
       <div className="max-w-4xl mx-auto px-6 py-20">
-        <div className="mb-16">
-          <h2 className="text-3xl font-light text-black mb-4">Preguntas frecuentes</h2>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-semibold text-neutral-900 mb-6 leading-tight">Preguntas frecuentes</h2>
+        </motion.div>
         
-        <div className="space-y-8">
+        <div className="space-y-2">
           {faqs.map((faq, index) => (
-            <div key={index} className="border-t border-black/10 pt-8 first:border-0 first:pt-0">
-              <h3 className="text-lg font-normal text-black mb-3">{faq.question}</h3>
-              <p className="text-sm font-light text-neutral-600 leading-relaxed">{faq.answer}</p>
-            </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="border-t border-black/10 first:border-0"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full flex items-center justify-between py-6 text-left hover:bg-neutral-50/50 transition-colors"
+              >
+                <h3 className="text-lg font-normal text-black pr-8">{faq.question}</h3>
+                <motion.div
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                >
+                  <ChevronDown className="w-5 h-5 text-neutral-600 shrink-0" />
+                </motion.div>
+              </button>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-sm font-light text-neutral-600 leading-relaxed pb-6">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

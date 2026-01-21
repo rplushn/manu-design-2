@@ -1,11 +1,27 @@
+"use client"
+
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 import { ArrowRight } from "lucide-react"
 
 export function FeatureInventory() {
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  })
+  const y = useTransform(scrollYProgress, [0, 1], [0, -20])
+
   return (
-    <section className="bg-[#111111] py-32 overflow-hidden relative">
+    <section ref={ref} className="bg-[#111111] py-32 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+          >
             <span className="text-sm font-semibold tracking-widest text-neutral-400 uppercase mb-4 block">
               INVENTARIO EN TIEMPO REAL
             </span>
@@ -27,12 +43,23 @@ export function FeatureInventory() {
               </div>
             </div>
 
-            <button className="flex items-center gap-2 text-white border-b border-white pb-1 hover:opacity-80 transition-opacity">
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="flex items-center gap-2 text-white border-b border-white pb-1 hover:opacity-80 transition-opacity"
+            >
               Ver demo de inventario <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
 
-          <div className="relative mx-auto w-[12.5rem] sm:w-[18.75rem]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            style={{ y }}
+            className="relative mx-auto w-[12.5rem] sm:w-[18.75rem]"
+          >
             <img
               src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero108/iphone.png"
               alt="iPhone frame"
@@ -58,7 +85,7 @@ export function FeatureInventory() {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,13 +1,31 @@
+"use client"
+
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 import { Check } from "lucide-react"
 
 export function FeatureOCR() {
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  })
+  const y = useTransform(scrollYProgress, [0, 1], [0, -20])
+
   return (
-    <section id="funcionalidades" className="bg-white py-24 overflow-hidden">
+    <section id="funcionalidades" className="bg-white py-24 overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* Mockup celular */}
-          <div className="order-2 lg:order-1">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            style={{ y }}
+            className="order-2 lg:order-1"
+          >
             <div className="relative mx-auto w-[12.5rem] sm:w-[18.75rem]">
               <img
                 src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/hero108/iphone.png"
@@ -39,10 +57,16 @@ export function FeatureOCR() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Texto */}
-          <div className="order-1 lg:order-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="order-1 lg:order-2"
+          >
             <span className="text-sm font-semibold tracking-widest text-neutral-500 uppercase mb-4 block">
               CONTROL DE GASTOS
             </span>
@@ -60,15 +84,22 @@ export function FeatureOCR() {
                 "Historial seguro por meses",
                 "Detección automática de duplicados",
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-neutral-700">
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="flex items-center gap-3 text-neutral-700"
+                >
                   <div className="w-6 h-6 bg-black flex items-center justify-center shrink-0">
                     <Check className="w-3 h-3 text-white" strokeWidth={3} />
                   </div>
                   {item}
-                </li>
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
