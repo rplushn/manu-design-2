@@ -1,81 +1,23 @@
 import { Header } from "@/components/Header"
 import { Footer15 } from "@/components/Footer15"
-import { Button } from "@/components/ui/button"
+import PortalHero from "@/components/PortalHero"
 import { ImageLightbox } from "@/components/ui/ImageLightbox"
-import { ArrowDown, Check, Maximize2 } from "lucide-react"
+import { Check } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from "next"
 
-export const metadata = {
-  title: 'Portal Web - MANU',
-  description: 'Gestiona inventarios masivos y reportes avanzados desde el nuevo Portal Web de MANU.',
+export const metadata: Metadata = {
+  title: "Portal Web - MANU",
+  description: "Gestiona inventarios masivos y reportes avanzados desde el nuevo Portal Web de MANU.",
 }
 
 export default function PortalPage() {
   return (
-    <div className="bg-white min-h-screen font-sans text-neutral-900 selection:bg-neutral-100">
+    <div className="min-h-screen bg-white font-sans text-neutral-900 selection:bg-neutral-100">
       <Header />
-
+      
       <main>
-        {/* --- HERO SECTION --- */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Background Image */}
-          <div 
-            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-            style={{ 
-              backgroundImage: "url('/Dashboard-Panel-Portal.png')",
-              backgroundPosition: "center top" // Adjusted for better visibility
-            }}
-          />
-          
-          {/* Overlay Dark Gradient */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/90 via-black/70 to-black/40" />
-          
-          {/* Content */}
-          <div className="relative z-20 container mx-auto px-6 text-center text-white pt-20">
-            <div className="animate-fade-in-up">
-              <span className="inline-block py-1.5 px-4 border border-white/20 bg-white/10 backdrop-blur-md text-xs font-bold tracking-[0.2em] uppercase mb-8">
-                Próximamente · Febrero 2026
-              </span>
-              
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-tight">
-                Tu negocio, <br className="hidden md:block" />
-                a otro nivel.
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-neutral-200 mb-8 max-w-3xl mx-auto leading-relaxed font-light">
-                Muy pronto tendrás un portal web ultra moderno para controlar inventarios masivos, 
-                facturación electrónica y reportes avanzados desde tu navegador.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button 
-                  asChild 
-                  size="lg" 
-                  className="rounded-none bg-white text-black hover:bg-neutral-200 text-lg px-10 py-7 h-auto transition-all duration-300 hover:scale-105"
-                >
-                  <Link href="#inventario-portal">
-                    Ver lo que viene <ArrowDown className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                
-                <ImageLightbox
-                  thumbnailSrc="/Dashboard-Panel-Portal.png"
-                  fullSrc="/Dashboard-Panel-Portal.png"
-                  alt="Dashboard del portal web MANU"
-                  trigger={
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="rounded-none border-white/30 text-white hover:bg-white/10 text-lg px-10 py-7 h-auto transition-all duration-300 hover:scale-105"
-                    >
-                      Ver dashboard en grande <Maximize2 className="ml-2 h-5 w-5" />
-                    </Button>
-                  }
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        <PortalHero />
 
         {/* --- SECCIÓN 1: INVENTARIO WEB --- */}
         <section id="inventario-portal" className="py-32 bg-white overflow-hidden">
@@ -189,18 +131,14 @@ export default function PortalPage() {
             <p className="text-xl text-neutral-400 mb-10 max-w-2xl mx-auto">
               El portal web estará disponible para todos los usuarios del plan Profesional y Empresa a partir de Febrero 2026.
             </p>
-            <Button 
-              asChild 
-              size="lg" 
-              className="rounded-none bg-white text-black hover:bg-neutral-200 text-lg px-12 py-8 h-auto font-semibold"
+            <Link 
+              href="/contacto"
+              className="inline-block rounded-none bg-white text-black hover:bg-neutral-200 text-lg px-12 py-8 h-auto font-semibold transition-colors"
             >
-              <Link href="/contacto">
-                Solicitar acceso anticipado
-              </Link>
-            </Button>
+              Solicitar acceso anticipado
+            </Link>
           </div>
         </section>
-
       </main>
 
       <Footer15 />
