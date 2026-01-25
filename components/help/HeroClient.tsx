@@ -27,10 +27,10 @@ export function HeroClient({ whatsappUrl }: HeroClientProps) {
         </p>
 
         {/* Número de soporte destacado */}
-        <div className="mb-12 animate-fade-in-up animation-delay-200">
+        <div className="mb-12 animate-fade-in-up animation-delay-200 overflow-x-auto">
           <a 
             href="tel:+50489502917" 
-            className="block text-5xl md:text-7xl lg:text-8xl font-thin tracking-tighter hover:text-neutral-600 transition-colors duration-300"
+            className="inline-block text-4xl md:text-6xl font-thin tracking-tighter hover:text-neutral-600 transition-colors duration-300 whitespace-nowrap"
           >
             +504 8950 2917
           </a>
