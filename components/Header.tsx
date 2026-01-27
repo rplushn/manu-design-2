@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 
 export function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +37,7 @@ export function Header() {
   }, [lastScrollY])
 
   return (
+    <>
     <motion.header
       animate={{
         y: isHeaderVisible ? 0 : '-100%',
@@ -48,7 +51,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center group transition-transform group-hover:scale-105">
+          <Link href="/" className="flex items-center group transition-transform group-hover:scale-105 z-50">
             <img
               src="/LOGO-MANU-negro.svg"
               alt="MANU Logo"
@@ -56,7 +59,7 @@ export function Header() {
             />
           </Link>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <Link 
               href="/" 
@@ -90,15 +93,85 @@ export function Header() {
             </Link>
           </nav>
 
-          {/* Login Button */}
-          <Link 
-            href="/portal" 
-            className="px-6 py-2 text-sm font-light text-black border border-black/10 hover:border-black/30 hover:bg-black/5 transition-all"
+          {/* Desktop Login Button */}
+          <div className="hidden md:block">
+            <Link 
+              href="/portal" 
+              className="px-6 py-2 text-sm font-light text-black border border-black/10 hover:border-black/30 hover:bg-black/5 transition-all"
+            >
+              Portal Web (Feb 2026)
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden z-50 p-2 -mr-2 text-black"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
-            Portal Web (Feb 2026)
-          </Link>
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
     </motion.header>
+
+    {/* Mobile Menu Overlay */}
+    <AnimatePresence>
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 z-40 bg-[#d9d9d9] pt-24 px-6 md:hidden"
+        >
+          <nav className="flex flex-col gap-6 text-center">
+            <Link 
+              href="/" 
+              className="text-xl font-light text-black hover:text-neutral-600 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Inicio
+            </Link>
+            <Link 
+              href="/funcionalidades" 
+              className="text-xl font-light text-black hover:text-neutral-600 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Funcionalidades
+            </Link>
+            <Link 
+              href="/quienes-somos" 
+              className="text-xl font-light text-black hover:text-neutral-600 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Quiénes Somos
+            </Link>
+            <Link 
+              href="/contacto" 
+              className="text-xl font-light text-black hover:text-neutral-600 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contacto
+            </Link>
+            <Link 
+              href="/ayuda" 
+              className="text-xl font-light text-black hover:text-neutral-600 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Ayuda
+            </Link>
+            <Link 
+              href="/portal" 
+              className="mt-4 px-6 py-3 text-lg font-light text-black border border-black/20 rounded-none mx-auto inline-block hover:bg-black/5 transition-all"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Portal Web (Feb 2026)
+            </Link>
+          </nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   )
 }
