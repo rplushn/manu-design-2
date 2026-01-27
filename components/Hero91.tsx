@@ -41,7 +41,7 @@ const Hero91 = ({ className }: Hero91Props) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="my-8 text-gray-700 md:text-xl font-light leading-relaxed"
+          className="my-8 text-gray-700 md:text-base font-light leading-relaxed"
         >
           Ahora con control de inventario integrado. Cada factura que escaneas actualiza tus existencias automáticamente. Sin hojas de cálculo, sin errores.
         </motion.p>
