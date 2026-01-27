@@ -1,9 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-<<<<<<< HEAD
-import Link from "next/link"
-=======
 import { Check } from "lucide-react"
 import Link from "next/link"
 
@@ -24,7 +21,6 @@ interface Plan {
   highlighted?: boolean;
   whatsappMessage: string;
 }
->>>>>>> 8d17f8661785e322679613bbd7e132d25c4d1d8d
 
 export function Pricing() {
   const plans: Plan[] = [
@@ -36,21 +32,12 @@ export function Pricing() {
       buttonText: 'Comenzar gratis',
       whatsappMessage: 'Hola Manu, quiero comenzar con el Plan Gratis.',
       features: [
-<<<<<<< HEAD
-        'Hasta 50 facturas/mes',
-        'Escaneo OCR básico',
-        'Exportar a Excel',
-        'Soporte por email'
-      ],
-      whatsappMessage: 'Hola Manu, quiero comenzar con el plan Gratis'
-=======
         { text: '10 Facturas / mes' },
         { text: '10 Clientes activos' },
         { text: '20 Productos en inventario' },
         { text: '100 Gastos / mes (registro manual)' },
         { text: 'Sin respaldo de fotos en nube', dim: true }
       ]
->>>>>>> 8d17f8661785e322679613bbd7e132d25c4d1d8d
     },
     {
       name: 'Plan Básico',
@@ -62,16 +49,6 @@ export function Pricing() {
       highlighted: false,
       whatsappMessage: 'Hola Manu, me interesa el Plan Básico de L 350.',
       features: [
-<<<<<<< HEAD
-        'Facturas ilimitadas',
-        'OCR avanzado',
-        'Todas las integraciones',
-        'Soporte prioritario',
-        'API access'
-      ],
-      featured: true,
-      whatsappMessage: 'Hola Manu, quiero comenzar con el plan Profesional'
-=======
         { text: '80 Facturas / mes' },
         { text: '80 Clientes activos' },
         { text: '200 Productos en inventario' },
@@ -81,7 +58,6 @@ export function Pricing() {
         { text: 'Respaldo de fotos de facturas (Historial)', bold: true },
         { text: 'Sin acceso a Portal Web', dim: true }
       ]
->>>>>>> 8d17f8661785e322679613bbd7e132d25c4d1d8d
     },
     {
       name: 'Plan Premium',
@@ -93,14 +69,6 @@ export function Pricing() {
       highlighted: true, 
       whatsappMessage: 'Hola Manu, quiero suscribirme al Plan Premium de L 699.',
       features: [
-<<<<<<< HEAD
-        'Todo en Profesional',
-        'Múltiples usuarios',
-        'Soporte dedicado',
-        'Capacitación incluida'
-      ],
-      whatsappMessage: 'Hola Manu, quiero información sobre el plan Empresa'
-=======
         { text: '500 Facturas / mes' },
         { text: '300 Clientes activos' },
         { text: '1,000 Productos en inventario' },
@@ -112,7 +80,6 @@ export function Pricing() {
         { text: 'Full acceso a Portal Web con historial de movimientos de inventario' },
         { text: 'Importación y exportación de inventario en Excel' }
       ]
->>>>>>> 8d17f8661785e322679613bbd7e132d25c4d1d8d
     }
   ]
 
@@ -176,27 +143,8 @@ export function Pricing() {
                 ))}
               </ul>
               
-<<<<<<< HEAD
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <Link
-                  href={`https://web.whatsapp.com/send?phone=50489502917&text=${encodeURIComponent(plan.whatsappMessage)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`w-full py-3 text-sm font-light border-0 transition-colors inline-block text-center ${
-                    plan.featured 
-                      ? 'bg-black text-white hover:bg-black/90' 
-                      : 'bg-white text-black border border-black/20 hover:border-black/40'
-                  }`}
-                >
-                  {plan.price === 'Contactar' ? 'Hablar con ventas' : 'Comenzar'}
-                </Link>
-              </motion.div>
-=======
               <Link
-                href={`https://api.whatsapp.com/send?phone=50489502917&text=${encodeURIComponent(plan.whatsappMessage)}`}
+                href={`https://web.whatsapp.com/send?phone=50489502917&text=${encodeURIComponent(plan.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full"
@@ -212,7 +160,6 @@ export function Pricing() {
                   {plan.buttonText}
                 </motion.button>
               </Link>
->>>>>>> 8d17f8661785e322679613bbd7e132d25c4d1d8d
             </motion.div>
           ))}
         </div>

@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 
 export function CTA() {
-  const whatsappUrl = "https://api.whatsapp.com/send?phone=50489502917&text=Hola%20Manu%2C%20quiero%20comenzar%20gratis"
-  const demoUrl = "https://api.whatsapp.com/send?phone=50489502917&text=Hola%20Manu%2C%20quiero%20agendar%20una%20demo"
+  const whatsappUrl = "https://web.whatsapp.com/send?phone=50489502917&text=" + encodeURIComponent("Hola Manu, quiero comenzar gratis")
+  const demoUrl = "https://web.whatsapp.com/send?phone=50489502917&text=" + encodeURIComponent("Hola Manu, quiero agendar una demo")
 
   return (
     <motion.section
@@ -43,40 +43,11 @@ export function CTA() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex gap-4 justify-center"
           >
-<<<<<<< HEAD
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <Link
-                href={`https://web.whatsapp.com/send?phone=50489502917&text=${encodeURIComponent("Hola Manu, quiero comenzar gratis")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-white text-black text-sm font-light border-0 hover:bg-neutral-100 transition-colors relative overflow-hidden group inline-block"
-              >
-                <span className="relative z-10">Comenzar gratis</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
-              </Link>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <Link
-                href={`https://web.whatsapp.com/send?phone=50489502917&text=${encodeURIComponent("Hola Manu, quiero agendar una demo")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-transparent text-white text-sm font-light border border-white/30 hover:border-white/60 transition-colors inline-block"
-              >
-                Agendar demo
-              </Link>
-            </motion.div>
-=======
             <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="px-8 py-3 bg-white text-black text-sm font-light border-0 hover:bg-neutral-100 transition-colors relative overflow-hidden group rounded-sm"
+                className="px-8 py-3 bg-white text-black text-sm font-light border-0 hover:bg-neutral-100 transition-colors relative overflow-hidden group"
               >
                 <span className="relative z-10">Comenzar gratis</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
@@ -87,12 +58,11 @@ export function CTA() {
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="px-8 py-3 bg-transparent text-white text-sm font-light border border-white/30 hover:border-white/60 transition-colors rounded-sm"
+                className="px-8 py-3 bg-transparent text-white text-sm font-light border border-white/30 hover:border-white/60 transition-colors"
               >
                 Agendar demo
               </motion.button>
             </Link>
->>>>>>> 8d17f8661785e322679613bbd7e132d25c4d1d8d
           </motion.div>
         </div>
       </div>

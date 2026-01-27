@@ -14,11 +14,7 @@ const SOCIAL_LINKS = [
   },
   {
     icon: MessageCircle,
-<<<<<<< HEAD
     href: "https://web.whatsapp.com/send?phone=50489502917",
-=======
-    href: "https://api.whatsapp.com/send?phone=50489502917",
->>>>>>> 8d17f8661785e322679613bbd7e132d25c4d1d8d
   },
 ];
 
@@ -35,13 +31,8 @@ const NAVIGATION = [
   {
     title: "Soporte",
     links: [
-<<<<<<< HEAD
-      { name: "Centro de Ayuda", href: "#" },
-      { name: "Tutoriales", href: "#" },
-=======
       { name: "Centro de Ayuda", href: "/ayuda" },
       { name: "Tutoriales", href: "/ayuda" },
->>>>>>> 8d17f8661785e322679613bbd7e132d25c4d1d8d
       { name: "Contacto", href: "mailto:soporte@holamanu.com" },
     ],
   },
@@ -133,7 +124,6 @@ const Footer15 = ({ className }: Footer15Props) => {
                   })}
                   {section.title === "Soporte" && (
                     <div className="mt-2 flex flex-col gap-2">
-<<<<<<< HEAD
                       <div className="flex items-center gap-2 text-sm font-medium text-gray-400">
                         <Phone className="size-4" />
                         <a 
@@ -145,25 +135,14 @@ const Footer15 = ({ className }: Footer15Props) => {
                           +504 8950-2917
                         </a>
                       </div>
-                      <a 
-                        href="mailto:soporte@holamanu.com" 
-                        className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                      >
-                        soporte@holamanu.com
-                      </a>
-=======
-                        <div className="flex items-center gap-2 text-sm font-medium text-gray-400">
-                            <Phone className="size-4" />
-                            <a href="https://api.whatsapp.com/send?phone=50489502917" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
-                                +504 8950-2917
-                            </a>
-                        </div>
-                         <div className="flex items-center gap-2 text-sm font-medium text-gray-400">
-                             <a href="mailto:soporte@holamanu.com" className="hover:text-white transition-colors">
-                                 soporte@holamanu.com
-                             </a>
-                         </div>
->>>>>>> 8d17f8661785e322679613bbd7e132d25c4d1d8d
+                      <div className="flex items-center gap-2 text-sm font-medium text-gray-400">
+                        <a 
+                          href="mailto:soporte@holamanu.com" 
+                          className="hover:text-white transition-colors"
+                        >
+                          soporte@holamanu.com
+                        </a>
+                      </div>
                     </div>
                   )}
                 </div>
