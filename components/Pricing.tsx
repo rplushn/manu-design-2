@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
+import Link from "next/link"
 
 interface Feature {
   text: string;
@@ -18,6 +19,7 @@ interface Plan {
   features: Feature[];
   tag?: string;
   highlighted?: boolean;
+  whatsappMessage: string;
 }
 
 export function Pricing() {
@@ -28,6 +30,7 @@ export function Pricing() {
       price: 'Gratis',
       period: '',
       buttonText: 'Comenzar gratis',
+      whatsappMessage: 'Hola Manu, quiero comenzar con el Plan Gratis.',
       features: [
         { text: '10 Facturas / mes' },
         { text: '10 Clientes activos' },
@@ -44,6 +47,7 @@ export function Pricing() {
       period: '/mes',
       buttonText: 'Suscribirme ahora',
       highlighted: false,
+      whatsappMessage: 'Hola Manu, me interesa el Plan Básico de L 350.',
       features: [
         { text: '80 Facturas / mes' },
         { text: '80 Clientes activos' },
@@ -62,7 +66,8 @@ export function Pricing() {
       price: 'L 699.00',
       period: '/mes',
       buttonText: 'Suscribirme ahora',
-      highlighted: true, // Use this to style the border or tag if needed
+      highlighted: true, 
+      whatsappMessage: 'Hola Manu, quiero suscribirme al Plan Premium de L 699.',
       features: [
         { text: '500 Facturas / mes' },
         { text: '300 Clientes activos' },
@@ -138,16 +143,23 @@ export function Pricing() {
                 ))}
               </ul>
               
-              <motion.button
-                whileTap={{ scale: 0.98 }}
-                className={`w-full py-4 text-sm font-medium transition-colors ${
-                  plan.highlighted 
-                    ? 'bg-black text-white hover:bg-neutral-800' 
-                    : 'bg-white text-black border border-black hover:bg-neutral-50'
-                }`}
+              <Link
+                href={`https://api.whatsapp.com/send?phone=50489502917&text=${encodeURIComponent(plan.whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
               >
-                {plan.buttonText}
-              </motion.button>
+                <motion.button
+                  whileTap={{ scale: 0.98 }}
+                  className={`w-full py-4 text-sm font-medium transition-colors ${
+                    plan.highlighted 
+                      ? 'bg-black text-white hover:bg-neutral-800' 
+                      : 'bg-white text-black border border-black hover:bg-neutral-50'
+                  }`}
+                >
+                  {plan.buttonText}
+                </motion.button>
+              </Link>
             </motion.div>
           ))}
         </div>
