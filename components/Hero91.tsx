@@ -17,8 +17,8 @@ const Hero91 = ({ className }: Hero91Props) => {
         className,
       )}
     >
-      <div className="container max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 px-6 lg:px-12 relative z-10">
-      <div className="flex flex-col gap-5 lg:w-[50%] lg:pr-8">
+      <div className="container max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 px-6 lg:px-20 relative z-10">
+      <div className="flex flex-col gap-5 lg:w-[48%] lg:max-w-2xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
