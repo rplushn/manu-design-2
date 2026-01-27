@@ -5,7 +5,9 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 
 export function WhatsAppButton() {
-  const whatsappUrl = "https://web.whatsapp.com/send?phone=50489502917"
+  // Using api.whatsapp.com usually provides the best "Direct" experience across devices
+  // It opens the app on mobile and the web/app prompt on desktop without the "Landing page" style of wa.me
+  const whatsappUrl = "https://api.whatsapp.com/send?phone=50489502917&text=Hola%20Manu%2C%20necesito%20m%C3%A1s%20informaci%C3%B3n"
 
   return (
     <motion.div
