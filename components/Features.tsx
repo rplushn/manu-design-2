@@ -22,7 +22,7 @@ export function Features() {
     <section id="funcionalidades" className="border-b border-black/10">
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="mb-16">
-          <h2 className="text-[42px] font-light text-black mb-4">Tu negocio y tu vida, en orden.</h2>
+          <h2 className="text-[42px] font-semibold text-black mb-4">Tu negocio y tu vida, en orden.</h2>
           <p className="text-base font-light text-neutral-600">Todo lo que necesitas para gestionar tu contabilidad</p>
         </div>
         

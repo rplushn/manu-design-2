@@ -23,7 +23,7 @@ export function HeroInvoicingCAI() {
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black tracking-tight leading-[1.1] mb-8">
                 Facturación CAI <br/>
-                <span className="text-neutral-500">
+                <span className="text-black">
                   en segundos.
                 </span>
               </h1>

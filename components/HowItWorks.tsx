@@ -21,7 +21,7 @@ export function HowItWorks() {
     <section className="border-b border-black/10">
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="mb-16">
-          <h2 className="text-3xl font-light text-black mb-4">Empieza a facturar en 3 pasos.</h2>
+          <h2 className="text-[42px] font-light text-black mb-4">Empieza a facturar en 3 pasos.</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

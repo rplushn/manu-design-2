@@ -35,7 +35,7 @@ const FeatureSection = ({
             <div className="mb-8 inline-flex">
               <Icon className="w-8 h-8 text-black stroke-[1.5]" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-light text-black mb-8 leading-[1.15] tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-semibold text-black mb-8 leading-[1.15] tracking-tight">
               {title}
             </h2>
             <p className="text-xl text-neutral-500 font-light leading-relaxed max-w-md">
