@@ -3,12 +3,22 @@
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface Hero91Props {
   className?: string;
 }
 
 const Hero91 = ({ className }: Hero91Props) => {
+  const whatsappUrl = "https://api.whatsapp.com/send?phone=50489502917&text=Hola%20Manu%2C%20quiero%20comenzar%20gratis";
+
+  const scrollToFeatures = () => {
+    const element = document.getElementById('funcionalidades');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       id="inicio"
@@ -54,17 +64,23 @@ const Hero91 = ({ className }: Hero91Props) => {
             whileTap={{ scale: 0.97 }}
             className="w-full sm:w-auto"
           >
-            <Button className="w-full sm:w-auto h-fit items-center justify-center gap-1 rounded-full px-8 py-4 text-base relative overflow-hidden group">
-              <span className="relative z-10">Comenzar gratis →</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
-            </Button>
+            <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto block">
+              <Button className="w-full sm:w-auto h-fit items-center justify-center gap-1 rounded-full px-8 py-4 text-base relative overflow-hidden group">
+                <span className="relative z-10">Comenzar gratis →</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
+              </Button>
+            </Link>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="w-full sm:w-auto"
           >
-            <Button variant="secondary" className="w-full sm:w-auto h-fit rounded-full px-8 py-4 text-base">
+            <Button 
+              variant="secondary" 
+              className="w-full sm:w-auto h-fit rounded-full px-8 py-4 text-base"
+              onClick={scrollToFeatures}
+            >
               Ver cómo funciona
             </Button>
           </motion.div>
