@@ -13,17 +13,17 @@ const Hero91 = ({ className }: Hero91Props) => {
     <section
       id="inicio"
       className={cn(
-        "relative flex min-h-screen items-center justify-between pt-20 pb-14 overflow-hidden bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white",
+        "relative flex min-h-screen items-center justify-between pt-20 pb-14 overflow-hidden bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white w-full",
         className,
       )}
     >
-      <div className="container max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 px-6 lg:px-20 relative z-10 mt-5">
+      <div className="container max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 px-4 sm:px-6 lg:px-20 relative z-10 mt-5 w-full">
       <div className="flex flex-col gap-5 w-full lg:w-[52%] lg:max-w-2xl lg:pl-12">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0 }}
-          className="font-light text-gray-900 uppercase tracking-widest text-sm mt-12 md:mt-16 lg:mt-[70px]"
+          className="font-light text-gray-900 uppercase tracking-widest text-xs sm:text-sm mt-12 md:mt-16 lg:mt-[70px]"
         >
           FACTURACIÓN + INVENTARIO EN TIEMPO REAL
         </motion.p>
@@ -31,7 +31,7 @@ const Hero91 = ({ className }: Hero91Props) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-[57px] font-bold text-gray-900 leading-[1.1] w-full lg:w-[648px] mt-5"
+          className="!text-3xl sm:!text-4xl md:!text-5xl lg:!text-[57px] font-bold text-gray-900 leading-[1.1] w-full lg:w-[648px] mt-5 break-words max-w-full"
         >
           Una simple foto a tus facturas es todo lo que necesitas.
         </motion.h1>
@@ -39,7 +39,7 @@ const Hero91 = ({ className }: Hero91Props) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="my-8 text-gray-700 md:text-base font-light leading-relaxed"
+          className="my-8 text-gray-700 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-full"
         >
           Ahora con control de inventario integrado. Cada factura que escaneas actualiza tus existencias automáticamente. Sin hojas de cálculo, sin errores.
         </motion.p>
@@ -47,13 +47,14 @@ const Hero91 = ({ className }: Hero91Props) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col gap-4 font-medium md:flex-row"
+          className="flex flex-col gap-4 font-medium md:flex-row w-full sm:w-auto"
         >
           <motion.div
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
+            className="w-full sm:w-auto"
           >
-            <Button className="h-fit items-center gap-1 rounded-full px-8 py-4 text-base relative overflow-hidden group">
+            <Button className="w-full sm:w-auto h-fit items-center justify-center gap-1 rounded-full px-8 py-4 text-base relative overflow-hidden group">
               <span className="relative z-10">Comenzar gratis →</span>
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
             </Button>
@@ -61,8 +62,9 @@ const Hero91 = ({ className }: Hero91Props) => {
           <motion.div
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
+            className="w-full sm:w-auto"
           >
-            <Button variant="secondary" className="h-fit rounded-full px-8 py-4 text-base">
+            <Button variant="secondary" className="w-full sm:w-auto h-fit rounded-full px-8 py-4 text-base">
               Ver cómo funciona
             </Button>
           </motion.div>
