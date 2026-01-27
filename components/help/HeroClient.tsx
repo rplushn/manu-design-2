@@ -10,7 +10,7 @@ interface HeroClientProps {
 
 export function HeroClient({ whatsappUrl }: HeroClientProps) {
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32">
+    <section className="relative overflow-hidden py-24 lg:py-32 bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white">
       {/* Fondo animado sutil (Blobs) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none opacity-40">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-neutral-100 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
