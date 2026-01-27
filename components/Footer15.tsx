@@ -14,7 +14,7 @@ const SOCIAL_LINKS = [
   },
   {
     icon: MessageCircle,
-    href: "https://wa.me/50489502917",
+    href: "https://api.whatsapp.com/send?phone=50489502917",
   },
 ];
 
@@ -22,18 +22,18 @@ const NAVIGATION = [
   {
     title: "Producto",
     links: [
-      { name: "Inicio", href: "#" },
-      { name: "Funcionalidades", href: "#" },
-      { name: "Negocios", href: "#" },
-      { name: "Precios", href: "#" },
+      { name: "Inicio", href: "/" },
+      { name: "Funcionalidades", href: "/funcionalidades" },
+      { name: "Negocios", href: "/#precios" },
+      { name: "Precios", href: "/#precios" },
     ],
   },
   {
     title: "Soporte",
     links: [
-      { name: "Centro de Ayuda", href: "#" },
-      { name: "Tutoriales", href: "#" },
-      { name: "Contacto", href: "#" },
+      { name: "Centro de Ayuda", href: "/ayuda" },
+      { name: "Tutoriales", href: "/ayuda" },
+      { name: "Contacto", href: "mailto:soporte@holamanu.com" },
     ],
   },
   {
@@ -110,10 +110,8 @@ const Footer15 = ({ className }: Footer15Props) => {
                     {section.title}
                   </p>
                   {section.links.map((link, _) => {
-                    const LinkComponent = section.title === "Legal" ? Link : "a";
-                    const linkProps = section.title === "Legal" 
-                      ? { href: link.href }
-                      : { href: link.href };
+                    const LinkComponent = (section.title === "Legal" || section.title === "Producto" || link.href.startsWith('/')) ? Link : "a";
+                    const linkProps = { href: link.href };
                     return (
                       <LinkComponent
                         key={link.name}
@@ -125,11 +123,18 @@ const Footer15 = ({ className }: Footer15Props) => {
                     );
                   })}
                   {section.title === "Soporte" && (
-                    <div className="mt-2 flex items-center gap-2 text-sm font-medium text-gray-400">
-                      <Phone className="size-4" />
-                      <a href="tel:+50489502917" className="hover:text-white transition-colors">
-                        +504 8950-2917
-                      </a>
+                    <div className="mt-2 flex flex-col gap-2">
+                        <div className="flex items-center gap-2 text-sm font-medium text-gray-400">
+                            <Phone className="size-4" />
+                            <a href="https://api.whatsapp.com/send?phone=50489502917" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                                +504 8950-2917
+                            </a>
+                        </div>
+                         <div className="flex items-center gap-2 text-sm font-medium text-gray-400">
+                             <a href="mailto:soporte@holamanu.com" className="hover:text-white transition-colors">
+                                 soporte@holamanu.com
+                             </a>
+                         </div>
                     </div>
                   )}
                 </div>
@@ -150,8 +155,5 @@ const Footer15 = ({ className }: Footer15Props) => {
   );
 };
 
-// Named export (matches the import statement import { Footer15 })
 export { Footer15 };
-
-// Default export (as requested by user)
 export default Footer15;
