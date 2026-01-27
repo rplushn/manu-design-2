@@ -7,7 +7,7 @@ export default function QuienesSomosPage() {
       <Header />
 
       <main className="pt-20">
-        <section className="py-16 border-b border-neutral-100 bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white">
+        <section className="py-16 bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white">
           <div className="max-w-4xl mx-auto px-6">
             <span className="text-sm font-semibold tracking-[0.25em] text-neutral-500 uppercase">
               Quiénes somos
