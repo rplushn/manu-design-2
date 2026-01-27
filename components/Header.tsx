@@ -2,25 +2,48 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false)
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const currentScrollY = window.scrollY
+      const deltaY = currentScrollY - lastScrollY
+
+      // Si estamos en los primeros 100px, header siempre visible
+      if (currentScrollY < 100) {
+        setIsHeaderVisible(true)
+      } else {
+        // Solo aplicar lógica de ocultar/mostrar si pasamos el threshold
+        if (deltaY > 10) {
+          // Scroll DOWN rápido (más de 10px) - ocultar header
+          setIsHeaderVisible(false)
+        } else if (deltaY < -10) {
+          // Scroll UP (más de 10px hacia arriba) - mostrar header
+          setIsHeaderVisible(true)
+        }
+      }
+
+      setLastScrollY(currentScrollY)
     }
-    window.addEventListener('scroll', handleScroll)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/80 backdrop-blur-md border-b border-black/5 shadow-sm' 
-          : 'bg-transparent'
-      }`}
+    <motion.header
+      animate={{
+        y: isHeaderVisible ? 0 : '-100%',
+      }}
+      transition={{
+        duration: 0.3,
+        ease: 'easeInOut'
+      }}
+      className="fixed top-0 left-0 right-0 z-50 bg-[#d9d9d9]"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
@@ -76,6 +99,6 @@ export function Header() {
           </Link>
         </div>
       </div>
-    </header>
+    </motion.header>
   )
 }

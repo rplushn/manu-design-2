@@ -13,19 +13,17 @@ const Hero91 = ({ className }: Hero91Props) => {
     <section
       id="inicio"
       className={cn(
-        "relative flex min-h-screen items-center justify-between bg-background py-14 overflow-hidden",
+        "relative flex min-h-screen items-center justify-between py-14 overflow-hidden bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white",
         className,
       )}
     >
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-white to-neutral-50 animate-gradient-shift" />
-      
-      <div className="flex flex-col gap-5 px-[10%] lg:w-[50%] lg:pr-0 relative z-10">
+      <div className="container max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 px-6 lg:px-12 relative z-10">
+      <div className="flex flex-col gap-5 lg:w-[50%] lg:pr-8">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0 }}
-          className="font-light text-foreground uppercase tracking-widest text-sm"
+          className="font-light text-gray-900 uppercase tracking-widest text-sm"
         >
           FACTURACIÓN + INVENTARIO EN TIEMPO REAL
         </motion.p>
@@ -33,7 +31,7 @@ const Hero91 = ({ className }: Hero91Props) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl font-bold text-foreground md:text-6xl lg:text-7xl leading-[1.1]"
+          className="text-5xl font-bold text-gray-900 md:text-6xl lg:text-7xl leading-[1.1]"
         >
           Una simple foto a tus facturas es todo lo que necesitas.
         </motion.h1>
@@ -41,7 +39,7 @@ const Hero91 = ({ className }: Hero91Props) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="my-8 text-foreground/80 md:text-xl font-light leading-relaxed"
+          className="my-8 text-gray-700 md:text-xl font-light leading-relaxed"
         >
           Ahora con control de inventario integrado. Cada factura que escaneas actualiza tus existencias automáticamente. Sin hojas de cálculo, sin errores.
         </motion.p>
@@ -74,9 +72,9 @@ const Hero91 = ({ className }: Hero91Props) => {
         initial={{ opacity: 0, x: 40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ type: "spring", stiffness: 80, damping: 18, delay: 0.2 }}
-        className="w-full shrink-0 hidden lg:block lg:w-[45%] relative z-10"
+        className="w-full shrink-0 hidden lg:block lg:w-[45%]"
       >
-        <div className="relative mx-auto h-[27.5rem] w-full max-w-[36.5rem] overflow-hidden rounded-3xl bg-neutral-50 bg-cover bg-center bg-no-repeat sm:h-[39.5rem]">
+        <div className="relative mx-auto h-[27.5rem] w-full max-w-[36.5rem] overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat sm:h-[39.5rem]">
           <div className="relative mx-auto mt-20 w-[12.5rem] sm:w-[18.75rem]">
             {/* App Screen Image - BEHIND */}
             <img
@@ -93,6 +91,7 @@ const Hero91 = ({ className }: Hero91Props) => {
           </div>
         </div>
       </motion.div>
+      </div>
     </section>
   );
 };
