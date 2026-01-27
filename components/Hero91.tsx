@@ -33,7 +33,7 @@ const Hero91 = ({ className }: Hero91Props) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-5xl font-bold text-gray-900 md:text-6xl lg:text-6xl leading-[1.1]"
-          style={{ fontSize: '61px', width: '648px', marginTop: '20px' }}
+          style={{ fontSize: '57px', width: '648px', marginTop: '20px' }}
         >
           Una simple foto a tus facturas es todo lo que necesitas.
         </motion.h1>
