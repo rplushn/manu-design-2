@@ -4,11 +4,11 @@ export default function QuienesSomosPage() {
   return (
     <>
       <section className="pt-20 pb-16 bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 mt-[100px]">
           <span className="text-sm font-semibold tracking-[0.25em] text-neutral-500 uppercase">
             Quiénes somos
           </span>
-          <h1 className="mt-4 text-4xl md:text-5xl font-semibold text-black">
+          <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black" style={{ fontSize: '44px' }}>
             Construimos MANU para las PYMES de Honduras.
           </h1>
           <p className="mt-4 text-lg text-neutral-600">

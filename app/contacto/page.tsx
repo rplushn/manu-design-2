@@ -6,11 +6,11 @@ export default function ContactoPage() {
     <>
       <section className="pt-20 pb-16 bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white">
           <div className="max-w-5xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
-            <div>
+            <div className="mt-[100px]">
               <span className="text-sm font-semibold tracking-[0.25em] text-neutral-500 uppercase">
                 Contacto
               </span>
-              <h1 className="mt-4 text-4xl md:text-5xl font-semibold text-black">
+              <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black">
                 Hablemos de tu negocio.
               </h1>
               <p className="mt-4 text-lg text-neutral-600">
@@ -42,7 +42,7 @@ export default function ContactoPage() {
               </div>
             </div>
 
-            <div className="border border-neutral-200 p-6 bg-[#d9d9d9]">
+            <div className="border border-neutral-200 p-6 bg-[#d9d9d9] mt-[100px]">
               <h2 className="text-lg font-semibold text-black mb-4">
                 Solicitar una demo
               </h2>

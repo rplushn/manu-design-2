@@ -19,7 +19,7 @@ export function HeroClient({ whatsappUrl }: HeroClientProps) {
       </div>
 
       <div className="container max-w-4xl mx-auto px-6 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-black mb-6 animate-fade-in-up">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-black mb-6 mt-20 animate-fade-in-up">
           ¿Necesitas ayuda con Manu?
         </h1>
         <p className="text-lg md:text-xl text-neutral-500 mb-12 max-w-2xl mx-auto animate-fade-in-up animation-delay-100">
