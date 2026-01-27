@@ -1,8 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export function CTA() {
+  const whatsappUrl = "https://api.whatsapp.com/send?phone=50489502917&text=Hola%20Manu%2C%20quiero%20comenzar%20gratis"
+  const demoUrl = "https://api.whatsapp.com/send?phone=50489502917&text=Hola%20Manu%2C%20quiero%20agendar%20una%20demo"
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -39,21 +43,26 @@ export function CTA() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex gap-4 justify-center"
           >
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="px-8 py-3 bg-white text-black text-sm font-light border-0 hover:bg-neutral-100 transition-colors relative overflow-hidden group"
-            >
-              <span className="relative z-10">Comenzar gratis</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="px-8 py-3 bg-transparent text-white text-sm font-light border border-white/30 hover:border-white/60 transition-colors"
-            >
-              Agendar demo
-            </motion.button>
+            <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="px-8 py-3 bg-white text-black text-sm font-light border-0 hover:bg-neutral-100 transition-colors relative overflow-hidden group rounded-sm"
+              >
+                <span className="relative z-10">Comenzar gratis</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
+              </motion.button>
+            </Link>
+            
+            <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="px-8 py-3 bg-transparent text-white text-sm font-light border border-white/30 hover:border-white/60 transition-colors rounded-sm"
+              >
+                Agendar demo
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </div>
