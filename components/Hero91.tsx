@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface Hero91Props {
   className?: string;
@@ -53,9 +54,18 @@ const Hero91 = ({ className }: Hero91Props) => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
           >
-            <Button className="h-fit items-center gap-1 rounded-full px-8 py-4 text-base relative overflow-hidden group">
-              <span className="relative z-10">Comenzar gratis →</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
+            <Button 
+              asChild
+              className="h-fit items-center gap-1 rounded-full px-8 py-4 text-base relative overflow-hidden group"
+            >
+              <Link 
+                href={`https://web.whatsapp.com/send?phone=50489502917&text=${encodeURIComponent("Hola Manu, quiero comenzar gratis")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="relative z-10">Comenzar gratis →</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1200" />
+              </Link>
             </Button>
           </motion.div>
           <motion.div

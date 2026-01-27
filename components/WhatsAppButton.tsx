@@ -5,7 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 
 export function WhatsAppButton() {
-  const whatsappUrl = "https://web.whatsapp.com/send?phone=50489502917"
+  const whatsappUrl = "https://web.whatsapp.com/send?phone=50489502917&text=" + encodeURIComponent("Hola Manu, necesito más información")
 
   return (
     <motion.div

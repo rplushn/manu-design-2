@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export function Pricing() {
   const plans = [
@@ -13,7 +14,8 @@ export function Pricing() {
         'Escaneo OCR básico',
         'Exportar a Excel',
         'Soporte por email'
-      ]
+      ],
+      whatsappMessage: 'Hola Manu, quiero comenzar con el plan Gratis'
     },
     {
       name: 'Profesional',
@@ -26,7 +28,8 @@ export function Pricing() {
         'Soporte prioritario',
         'API access'
       ],
-      featured: true
+      featured: true,
+      whatsappMessage: 'Hola Manu, quiero comenzar con el plan Profesional'
     },
     {
       name: 'Empresa',
@@ -37,7 +40,8 @@ export function Pricing() {
         'Múltiples usuarios',
         'Soporte dedicado',
         'Capacitación incluida'
-      ]
+      ],
+      whatsappMessage: 'Hola Manu, quiero información sobre el plan Empresa'
     }
   ]
 
@@ -91,17 +95,23 @@ export function Pricing() {
                 ))}
               </ul>
               
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className={`w-full py-3 text-sm font-light border-0 transition-colors ${
-                  plan.featured 
-                    ? 'bg-black text-white hover:bg-black/90' 
-                    : 'bg-white text-black border border-black/20 hover:border-black/40'
-                }`}
               >
-                {plan.price === 'Contactar' ? 'Hablar con ventas' : 'Comenzar'}
-              </motion.button>
+                <Link
+                  href={`https://web.whatsapp.com/send?phone=50489502917&text=${encodeURIComponent(plan.whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full py-3 text-sm font-light border-0 transition-colors inline-block text-center ${
+                    plan.featured 
+                      ? 'bg-black text-white hover:bg-black/90' 
+                      : 'bg-white text-black border border-black/20 hover:border-black/40'
+                  }`}
+                >
+                  {plan.price === 'Contactar' ? 'Hablar con ventas' : 'Comenzar'}
+                </Link>
+              </motion.div>
             </motion.div>
           ))}
         </div>
