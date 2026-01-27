@@ -17,13 +17,14 @@ const Hero91 = ({ className }: Hero91Props) => {
         className,
       )}
     >
-      <div className="container max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 px-6 lg:px-20 relative z-10">
+      <div className="container max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 px-6 lg:px-20 relative z-10" style={{ marginTop: '20px' }}>
       <div className="flex flex-col gap-5 lg:w-[52%] lg:max-w-2xl lg:pl-12">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0 }}
           className="font-light text-gray-900 uppercase tracking-widest text-sm"
+          style={{ marginTop: '70px' }}
         >
           FACTURACIÓN + INVENTARIO EN TIEMPO REAL
         </motion.p>
@@ -32,6 +33,7 @@ const Hero91 = ({ className }: Hero91Props) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-5xl font-bold text-gray-900 md:text-6xl lg:text-6xl leading-[1.1]"
+          style={{ fontSize: '69px', width: '648px', marginTop: '20px' }}
         >
           Una simple foto a tus facturas es todo lo que necesitas.
         </motion.h1>
