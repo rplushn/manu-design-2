@@ -21,7 +21,7 @@ export function HeroInvoicingCAI() {
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
                 Certificado por SAR Honduras
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-black tracking-tight leading-[1.1] mb-8">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-black tracking-tight leading-[1.1] mb-8">
                 Facturación CAI <br/>
                 <span className="text-neutral-500">
                   en segundos.
