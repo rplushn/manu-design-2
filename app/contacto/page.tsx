@@ -46,7 +46,7 @@ export default function ContactoPage() {
               </div>
             </div>
 
-            <div className="border border-neutral-200 p-6 bg-neutral-50">
+            <div className="border border-neutral-200 p-6 bg-[#d9d9d9]">
               <h2 className="text-lg font-semibold text-black mb-4">
                 Solicitar una demo
               </h2>
