@@ -18,7 +18,7 @@ const FeatureSection = ({
   imageContent?: React.ReactNode
 }) => {
   return (
-    <section className="py-24 lg:py-40 overflow-hidden border-b border-neutral-100 last:border-0">
+    <section className="py-[50px] overflow-hidden border-b border-neutral-100 last:border-0">
       <div className="container max-w-screen-xl mx-auto px-6 lg:px-20">
         <div className={cn(
           "flex flex-col lg:flex-row items-center gap-20 lg:gap-32",
