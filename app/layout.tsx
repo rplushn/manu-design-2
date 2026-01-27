@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <body className={`${inter.variable} font-sans antialiased`}>
         <Header />
-        <main className="pt-16">
+        <main>
           {children}
         </main>
         <WhatsAppButton />

@@ -1,4 +1,3 @@
-import { Header } from "@/components/Header"
 import { Footer15 } from "@/components/Footer15"
 import { HeroClient } from "@/components/help/HeroClient"
 import { FloatingWhatsApp } from "@/components/help/FloatingWhatsApp"
@@ -25,10 +24,7 @@ export default function AyudaPage() {
   const whatsappUrl = "https://wa.me/50489502917?text=Hola%20Manu%2C%20necesito%20ayuda%20con%20mi%20cuenta."
 
   return (
-    <div className="min-h-screen bg-white font-sans text-neutral-900 selection:bg-neutral-100">
-      <Header />
-
-      <main className="relative pt-16">
+    <>
         
         {/* --- HERO SECTION --- */}
         <HeroClient whatsappUrl={whatsappUrl} />
@@ -123,12 +119,10 @@ export default function AyudaPage() {
           </div>
         </section>
 
-      </main>
-
       <Footer15 />
 
       {/* --- FLOATING WHATSAPP BUTTON --- */}
       <FloatingWhatsApp whatsappUrl={whatsappUrl} />
-    </div>
+    </>
   )
 }

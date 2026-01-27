@@ -1,14 +1,10 @@
-import { Header } from "@/components/Header"
 import Footer15 from "@/components/Footer15"
 import Link from "next/link"
 
 export default function ContactoPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-
-      <main className="pt-20">
-        <section className="py-16 bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white">
+    <>
+      <section className="pt-20 pb-16 bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white">
           <div className="max-w-5xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <span className="text-sm font-semibold tracking-[0.25em] text-neutral-500 uppercase">
@@ -78,9 +74,8 @@ export default function ContactoPage() {
             </div>
           </div>
         </section>
-      </main>
 
       <Footer15 />
-    </div>
+    </>
   )
 }

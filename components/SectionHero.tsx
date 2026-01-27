@@ -21,7 +21,7 @@ export function SectionHero({
   return (
     <section
       className={cn(
-        "relative flex min-h-screen items-center justify-between py-14 overflow-hidden bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white",
+        "relative flex min-h-screen items-center justify-between pt-20 pb-14 overflow-hidden bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white",
         className,
       )}
     >

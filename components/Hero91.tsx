@@ -13,12 +13,12 @@ const Hero91 = ({ className }: Hero91Props) => {
     <section
       id="inicio"
       className={cn(
-        "relative flex min-h-screen items-center justify-between py-14 overflow-hidden bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white",
+        "relative flex min-h-screen items-center justify-between pt-20 pb-14 overflow-hidden bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white",
         className,
       )}
     >
       <div className="container max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-16 px-6 lg:px-20 relative z-10">
-      <div className="flex flex-col gap-5 lg:w-[48%] lg:max-w-2xl">
+      <div className="flex flex-col gap-5 lg:w-[52%] lg:max-w-2xl lg:pl-12">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ const Hero91 = ({ className }: Hero91Props) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl font-bold text-gray-900 md:text-6xl lg:text-7xl leading-[1.1]"
+          className="text-5xl font-bold text-gray-900 md:text-6xl lg:text-6xl leading-[1.1]"
         >
           Una simple foto a tus facturas es todo lo que necesitas.
         </motion.h1>
@@ -72,10 +72,10 @@ const Hero91 = ({ className }: Hero91Props) => {
         initial={{ opacity: 0, x: 40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ type: "spring", stiffness: 80, damping: 18, delay: 0.2 }}
-        className="w-full shrink-0 hidden lg:block lg:w-[45%]"
+        className="w-full shrink-0 hidden lg:block lg:w-[43%]"
       >
-        <div className="relative mx-auto h-[27.5rem] w-full max-w-[36.5rem] overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat sm:h-[39.5rem]">
-          <div className="relative mx-auto mt-20 w-[12.5rem] sm:w-[18.75rem]">
+        <div className="relative ml-auto h-[27.5rem] w-full max-w-[36.5rem] overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat sm:h-[39.5rem]">
+          <div className="relative mx-auto mt-20 w-[13.75rem] sm:w-[20.625rem]">
             {/* App Screen Image - BEHIND */}
             <img
               src="/Manu-Dashboard-foto.png"

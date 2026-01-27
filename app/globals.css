@@ -24,7 +24,7 @@
     @apply outline-none;
   }
   body {
-    @apply bg-white text-black antialiased;
+    @apply bg-[#d9d9d9] text-black antialiased;
   }
 }
 
