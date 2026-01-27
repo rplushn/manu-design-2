@@ -1,11 +1,10 @@
 "use client"
 
 import { MessageCircle } from "lucide-react"
-import Link from "next/link"
 import { motion } from "framer-motion"
 
 export function WhatsAppButton() {
-  const whatsappUrl = "https://wa.me/50489502917?text=" + encodeURIComponent("Hola Manu, necesito más información")
+  const whatsappUrl = "whatsapp://send?phone=50489502917&text=" + encodeURIComponent("Hola Manu, necesito más información")
 
   return (
     <motion.div
@@ -14,7 +13,7 @@ export function WhatsAppButton() {
       transition={{ duration: 0.5, delay: 0.3 }}
       className="fixed bottom-6 right-6 z-50"
     >
-      <Link
+      <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
@@ -22,7 +21,7 @@ export function WhatsAppButton() {
         aria-label="Contactar por WhatsApp"
       >
         <MessageCircle className="h-6 w-6 md:h-7 md:w-7 fill-current group-hover:scale-110 transition-transform duration-300" />
-      </Link>
+      </a>
     </motion.div>
   )
 }
