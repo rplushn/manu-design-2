@@ -1,6 +1,5 @@
 import { Footer15 } from "@/components/Footer15"
 import { HeroClient } from "@/components/help/HeroClient"
-import { FloatingWhatsApp } from "@/components/help/FloatingWhatsApp"
 import { 
   BookOpen, 
   FileText, 
@@ -120,9 +119,6 @@ export default function AyudaPage() {
         </section>
 
       <Footer15 />
-
-      {/* --- FLOATING WHATSAPP BUTTON --- */}
-      <FloatingWhatsApp whatsappUrl={whatsappUrl} />
     </>
   )
 }
