@@ -8,7 +8,7 @@ export default function ContactoPage() {
       <Header />
 
       <main className="pt-20">
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-b from-[#d9d9d9] via-[#d9d9d9] to-white">
           <div className="max-w-5xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <span className="text-sm font-semibold tracking-[0.25em] text-neutral-500 uppercase">
